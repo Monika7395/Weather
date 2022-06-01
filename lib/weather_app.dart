@@ -6,111 +6,84 @@ class WeatherApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        actions: [],
-      ),
-      body: Container(
-        child: Stack(children: [
-          Image.asset(
-            "assets/sunny.jpeg",
-            fit: BoxFit.cover,
-            height: double.infinity,
-            width: double.infinity,
-          ),
-          Container(
-            padding: EdgeInsets.all(20),
-            child: Column(children: [
-              Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 120,
-                          ),
-                          Text("Kolkata"),
-                          Text("Cloudy")
-                        ]),
-                  ]),
-            ]),
-          ),
-          Container(
-              padding: EdgeInsets.all(20),
-              child: Column(children: [
-                Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 120,
-                            ),
-                            Text("Season"),
-                          ]),
-                    ]),
-                Column(children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 40),
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                      color: Colors.white10,
-                    )),
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        height: 300,
-                      ),
-                      Text("Kolkata"),
-                      Text("36")
-                    ],
-                  ),
-                ]),
-                Column(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 40),
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                        color: Colors.white10,
-                      )),
-                    ),
-                    Row(children: [
-                      Container(children: [
-                        Column(children: [
-                          SizedBox(
-                            height: 150,
-                          ),
-                          Text("Visibility"),
-                        ]),
-                        Column(children: [
-                          SizedBox(
-                            height: 150,
-                          ),
-                          Text("Humidity"),
-                        ]),
-                        Column(children: [
-                          SizedBox(
-                            height: 150,
-                          ),
-                          Text("UV index"),
-                        ]),
-                      ]),
-                    ]),
-                  ],
-                )
-              ]))
+        appBar:
+            AppBar(title: Text('Weather Application'), actions: const <Widget>[
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Icon(Icons.settings),
+          )
         ]),
-      ),
-    );
+        body: Container(
+            child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.all(5),
+              margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
+              height: 250,
+              width: 380,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Color.fromARGB(255, 235, 187, 214),
+              ),
+              child: Text("Container"),
+            ),
+            Container(
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.all(5),
+                                  padding: EdgeInsets.all(8.0),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                    color: Colors.lightGreen,
+                                  ),
+                                  child: Text("Visibility"),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.all(20),
+                                  padding: EdgeInsets.all(8.0),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                    color: Colors.lightBlue,
+                                  ),
+                                  child: Text("Name"),
+                                )
+                              ],
+                            ),
+                            Column(
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.all(20),
+                                  padding: EdgeInsets.all(8.0),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                    color: Colors.lightGreen,
+                                  ),
+                                  child: Text("Visibility"),
+                                )
+                              ],
+                            )
+                          ],
+                          //Container
+                        ),
+                      ),
+                    )
+                  ]),
+            )
+          ],
+        )));
   }
 }
